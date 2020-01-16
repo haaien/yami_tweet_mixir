@@ -11,5 +11,5 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:textSize="40dp"
-        android:text="TitleView" />
+        android:text="病みツイミキサー" />
 </RelativeLayout>
