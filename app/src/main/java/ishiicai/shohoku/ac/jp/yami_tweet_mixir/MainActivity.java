@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.opening_layout);
 
-        Button button1 = (Button) findViewById(R.id.opening);     //画面遷移ボタン
+        Button button1 = (Button) findViewById(R.id.op);     //画面遷移ボタン
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
