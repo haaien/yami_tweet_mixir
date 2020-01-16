@@ -14,6 +14,7 @@ import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ImageView;
@@ -24,7 +25,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class TweetActivity_EightyPer extends AppCompatActivity {
     private EditText inputEditText;
-    private Button button;
+    private ImageButton imageButton;
     private TextView textView;
     private ImageView imageView;
     private InputMethodManager inputMethodManager;
@@ -35,9 +36,9 @@ public class TweetActivity_EightyPer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tweet_eightyper_layout);
-        button.findViewById(R.id.MixedButton);
+        imageButton.findViewById(R.id.MixedButton);
 
-        button.setOnClickListener(new View.OnClickListener(){
+        imageButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 String text = inputEditText.getText().toString();
@@ -48,7 +49,7 @@ public class TweetActivity_EightyPer extends AppCompatActivity {
                             .setMessage("入力したい文字がない！？アプリを消せ！！")
                             .setPositiveButton("close",null)
                             .show();
-                }else if(text.length()>1 && text.length()<20){  //１～20文字未満の場合　EditTextに文字を入れる
+                }else if(text.length()>=1 && text.length()<20){  //１～20文字未満の場合　EditTextに文字を入れる
                     textView.setText(text);
                     inputEditText.setText("");
 
@@ -56,8 +57,8 @@ public class TweetActivity_EightyPer extends AppCompatActivity {
 
                     ScreenChange();
 
-                }else if(text.length()>20){     //文字が20文字以上の場合　1文字目から30文字目までを切り取って表示
-                    textView.setText(text.substring(0,29));
+                }else if(text.length()>=20){     //文字が20文字以上の場合　1文字目から30文字目までを切り取って表示
+                    textView.setText(text.substring(0,19));
                     inputEditText.setText("");
 
                     ScreenChange();
