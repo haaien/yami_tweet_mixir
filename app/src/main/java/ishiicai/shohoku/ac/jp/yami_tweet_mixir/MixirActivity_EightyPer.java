@@ -37,12 +37,12 @@ public class MixirActivity_EightyPer extends AppCompatActivity {
                 points++;
 
                 if(points >= 8){
-                    Intent intent = new Intent(MixirActivity_Eighty.this, BrokenMixerActivity.class);
+                    Intent intent = new Intent(MixirActivity_EightyPer.this, BrokenMixerActivity.class);
                     intent.putExtra(SEND_POINT, points);      //現在のカウントを次の画面へ受け渡す
                     startActivity(intent);
                 }
             }
-        });Per
+        });
     }
 }
 
