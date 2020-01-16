@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MixirActivity_EightyPer extends AppCompatActivity {
 
+
     public int points = 0;
     private VideoView mVideoView;
     public static final String SEND_POINT = "SendToOtherActivity.DATA";
@@ -24,7 +25,7 @@ public class MixirActivity_EightyPer extends AppCompatActivity {
 
         //ボタンを押した際にカウントを増やし、一定値以上で切り替える
 
-        Button button1 = (Button)findViewById(R.id.button4);
+        Button button1 = (Button)findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -36,7 +37,7 @@ public class MixirActivity_EightyPer extends AppCompatActivity {
                 points++;
 
                 if(points >= 8){
-                    Intent intent = new Intent(MixirActivity_EightyPer.this, MixirActivity_empty.class);
+                    Intent intent = new Intent(MixirActivity_EightyPer.this, BrokenMixerActivity.class);
                     intent.putExtra(SEND_POINT, points);      //現在のカウントを次の画面へ受け渡す
                     startActivity(intent);
                 }
