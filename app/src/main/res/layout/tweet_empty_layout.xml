@@ -25,18 +25,18 @@
 
         <EditText
             android:id="@+id/InputEditText"
+            android:background="@drawable/wood_texture"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/wood_texture"
             android:ems="15"
             android:hint="ここになにもかも吐き出して\nミキサーで粉々にしてしまいましょう"
             android:textSize="15dp" />
 
         <ImageButton
             android:id="@+id/MixedButton"
-            android:background="@drawable/button_image"
+            android:background="@drawable/mixed_button"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:layout_weight="2"
