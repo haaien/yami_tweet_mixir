@@ -11,4 +11,5 @@ public class TweetActivity_Empty extends AppCompatActivity {
         setContentView(R.layout.tweet_empty_layout);
     }
 
+
 }
