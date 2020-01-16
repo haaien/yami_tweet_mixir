@@ -27,7 +27,9 @@ public class TweetActivity_Empty extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tweet_empty_layout);
-        imageButton.findViewById(R.id.MixedButton);
+        imageButton=(ImageButton)findViewById(R.id.MixedButton);
+        inputeditText=(EditText)findViewById(R.id.InputEditText);
+        textView=findViewById(R.id.textView);
 
         imageButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -43,7 +45,6 @@ public class TweetActivity_Empty extends AppCompatActivity {
                 }else if(text.length()>=1&&text.length()<20){
                     textView.setText(text);
                     inputeditText.setText("");
-                    textView.findViewById(R.id.InputEditText);
 
                     ScreenChange();
                 }else if(text.length()>=20){
@@ -59,7 +60,7 @@ public class TweetActivity_Empty extends AppCompatActivity {
     }
     public void ScreenChange(){
         textView.setText(String.valueOf(points));
-        Intent intent = new Intent(getApplicationContext(),MixirActivity_empty.class);
+        Intent intent = new Intent(getApplication(), MixirActivity_empty.class);
         intent.putExtra(TWEET_POINT,points);
         startActivity(intent);
     }
