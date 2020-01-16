@@ -25,7 +25,7 @@ public class TweetActivity_SixtyPer extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tweet_sixtyper_layout);
-        imageButton.findViewById(R.id.MixedButton);
+        imageButton=findViewById(R.id.MixedButton);
 
         imageButton.setOnClickListener(new View.OnClickListener(){
             @Override
