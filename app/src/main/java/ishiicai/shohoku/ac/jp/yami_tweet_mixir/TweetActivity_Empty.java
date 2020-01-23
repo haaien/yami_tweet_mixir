@@ -19,10 +19,9 @@ public class TweetActivity_Empty extends AppCompatActivity {
     private EditText inputeditText;
     private ImageButton imageButton;
     private TextView textView;
-    private ImageView imageView;
 
     public int points;
-    private static final String TWEET_POINT="TweesToOtherActivity.DATA";
+    public static final String TWEET_POINT="SendToOtherActivity.DATA";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,12 +29,17 @@ public class TweetActivity_Empty extends AppCompatActivity {
         imageButton=(ImageButton)findViewById(R.id.MixedButton);
         inputeditText=(EditText)findViewById(R.id.InputEditText);
         textView=findViewById(R.id.textView);
+        Intent intent = getIntent();
+
+        int acceptpoints = intent.getIntExtra(MixirActivity_empty.TWEET_POINT, 0);
+        points = acceptpoints;
 
         imageButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 String text = inputeditText.getText().toString();
 
+                points += text.length();
                 if(text.length()<1){
                     new AlertDialog.Builder(view.getContext())
                             .setTitle("")
@@ -61,7 +65,7 @@ public class TweetActivity_Empty extends AppCompatActivity {
     public void ScreenChange(){
         textView.setText(String.valueOf(points));
         Intent intent = new Intent(getApplication(), MixirActivity_empty.class);
-        intent.putExtra(TWEET_POINT,points);
+        intent.putExtra(TWEET_POINT, points);
         startActivity(intent);
     }
 
