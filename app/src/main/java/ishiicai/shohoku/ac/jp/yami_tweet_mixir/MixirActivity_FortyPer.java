@@ -34,17 +34,9 @@ public class MixirActivity_FortyPer extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
-                if(points >= 12){
-                    Intent intent = new Intent(getApplication(), TweetActivity_SixtyPer.class);
-                    intent.putExtra(SEND_POINT, points);      //現在のカウントを次の画面へ受け渡す
-                    startActivity(intent);
-                }
-                else{
-                    Intent intent = new Intent(getApplication(), TweetActivity_FortyPer.class);
-                    intent.putExtra(SEND_POINT, points);      //現在のカウントを次の画面へ受け渡す
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(getApplication(), TweetActivity_FortyPer.class);
+                intent.putExtra(SEND_POINT, points);      //現在のカウントを次の画面へ受け渡す
+                startActivity(intent);
             }
         });
     }

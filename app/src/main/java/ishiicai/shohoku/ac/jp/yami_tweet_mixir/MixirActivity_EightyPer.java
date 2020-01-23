@@ -18,7 +18,7 @@ public class MixirActivity_EightyPer extends AppCompatActivity {
 
     protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mixir_twentyper_layout);
+        setContentView(R.layout.mixir_eightyper_layout);
 
         mVideoView = (VideoView)findViewById(R.id.videoView2);
         mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.mixer_secondper));
@@ -36,17 +36,9 @@ public class MixirActivity_EightyPer extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-
-                if(points >= 20){
-                    Intent intent = new Intent(MixirActivity_EightyPer.this, TweetActivity_Empty.class);
-                    intent.putExtra(SEND_POINT, points);      //現在のカウントを次の画面へ受け渡す
-                    startActivity(intent);
-                }
-                else{
-                    Intent intent = new Intent(MixirActivity_EightyPer.this, TweetActivity_EightyPer.class);
-                    intent.putExtra(SEND_POINT, points);      //現在のカウントを次の画面へ受け渡す
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(MixirActivity_EightyPer.this, TweetActivity_EightyPer.class);
+                intent.putExtra(SEND_POINT, points);      //現在のカウントを次の画面へ受け渡す
+                startActivity(intent);
             }
         });
     }
