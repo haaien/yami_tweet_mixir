@@ -25,7 +25,7 @@ public class TweetActivity_FortyPer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tweet_fortyper_layout);
-        imageButton=findViewById(R.id.MixedButton);
+        imageButton.findViewById(R.id.MixedButton);
 
         imageButton.setOnClickListener(new View.OnClickListener(){
             @Override

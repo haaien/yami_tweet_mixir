@@ -17,7 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:label="yami_tweet_mixir" android:name=".TweetActivity_Empty"/>
-        <activity android:label="yami_tweet_mixir" android:name=".MixirActivity_empty"/>
     </application>
 
 </manifest>
