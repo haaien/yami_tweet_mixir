@@ -17,7 +17,7 @@ public class OpeningActivity extends AppCompatActivity {
     @Override
     public boolean onTouchEvent(MotionEvent T_Event) {
         if (T_Event.getAction() == MotionEvent.ACTION_UP) {
-            Intent intent = new Intent(OpeningActivity.this, TweetActivity_Empty.class);
+            Intent intent = new Intent(OpeningActivity.this, TweetActivity_TwentyPer.class);
             startActivity(intent);
         }
         return true;

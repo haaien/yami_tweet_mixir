@@ -32,7 +32,7 @@ public class BrokenMixerActivity extends AppCompatActivity {
             public void run() {
                 // 3秒後に表示
                 //インテントに、この画面と、遷移する別の画面を指定する
-                Intent intent = new Intent(getApplication(), MainActivity.class);
+                Intent intent = new Intent(getApplication(), OpeningActivity.class);
                 //インテントで指定した別の画面に遷移する
                 startActivity(intent);
             }
