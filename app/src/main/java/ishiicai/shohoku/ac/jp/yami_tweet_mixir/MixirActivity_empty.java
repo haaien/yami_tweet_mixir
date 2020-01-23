@@ -18,10 +18,10 @@ public class MixirActivity_empty extends AppCompatActivity {
 
     protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mixir_twentyper_layout);
+        setContentView(R.layout.mixir_empty_layout);
 
         mVideoView = (VideoView)findViewById(R.id.videoView2);
-        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.mixer_secondper));
+        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.normal_mixer));
 
         //ボタンを押した際にカウントを増やし、一定値以上で切り替える
 
@@ -30,23 +30,14 @@ public class MixirActivity_empty extends AppCompatActivity {
                 //カウントを１増やす、その際一定値以上ならば画面を遷移する
                 points++;
 
-
         Button button1 = (Button)findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-
-                if(points >= 24){
-                    Intent intent = new Intent(MixirActivity_empty.this, BrokenMixerActivity.class);
-                    intent.putExtra(SEND_POINT, points);      //現在のカウントを次の画面へ受け渡す
-                    startActivity(intent);
-                }
-                else{
-                    Intent intent = new Intent(MixirActivity_empty.this, TweetActivity_Empty.class);
-                    intent.putExtra(SEND_POINT, points);      //現在のカウントを次の画面へ受け渡す
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(MixirActivity_empty.this, TweetActivity_Empty.class);
+                intent.putExtra(SEND_POINT, points);      //現在のカウントを次の画面へ受け渡す
+                startActivity(intent);
             }
         });
     }
