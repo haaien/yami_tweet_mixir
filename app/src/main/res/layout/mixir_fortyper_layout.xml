@@ -5,32 +5,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button2"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginBottom="100dp"
-        android:text="Button"
-        android:textSize="24sp" />
-
+        android:layout_marginTop="160dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="40dp"
+        android:text="Void" />
 
     <VideoView
-        android:id="@+id/videoView2"
-        android:layout_width="350dp"
-        android:layout_height="204dp"
-        android:layout_marginTop="100dp"
+        android:id="@+id/videoView6"
+        android:layout_width="255dp"
+        android:layout_height="272dp"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/videoView6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/InputEditText"
+            android:background="@drawable/wood_texture"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:ems="15"
+            android:hint="ここになにもかも吐き出して\nミキサーで粉々にしてしまいましょう"
+            android:textSize="15dp" />
+
+        <ImageButton
+            android:id="@+id/MixedButton"
+            android:background="@drawable/mixed_button"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_weight="2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <!-- 開発用視覚化View -->
+
+    <TextView
+        android:id="@+id/StrNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.422" />
+        android:textSize="30dp"
+        android:text="合計文字数 ：" />
+
+    <TextView
+        android:id="@+id/StrNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/StrNumView"
+        android:layout_toRightOf="@id/StrNumView"
+        android:textSize="30dp"
+        android:text="0" />
 
 </RelativeLayout>

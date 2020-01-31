@@ -19,7 +19,7 @@ public class MixirActivity_FortyPer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mixir_fortyper_layout);
 
-        mVideoView = (VideoView)findViewById(R.id.videoView2);
+        mVideoView = (VideoView)findViewById(R.id.videoView6);
         mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.mixer_fourper));
 
         //ボタンを押した際にカウントを増やし、一定値以上で切り替える
@@ -29,7 +29,7 @@ public class MixirActivity_FortyPer extends AppCompatActivity {
                 //カウントを１増やす、その際一定値以上ならば画面を遷移する
                 points++;
 
-                Button button1 = (Button) findViewById(R.id.button2);
+                Button button1 = (Button) findViewById(R.id.button6);
                 button1.setOnClickListener(new View.OnClickListener() {
 
             @Override
