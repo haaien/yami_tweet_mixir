@@ -20,7 +20,7 @@ public class TweetActivity_FortyPer extends AppCompatActivity {
     private ImageView imageView;
 
     public int points;
-    public static final String TWEET_POINT_TWO="TweetToOtherActivity.DATA";
+    public static final String TWEET_POINT="TweetToOtherActivity.DATA";
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -39,7 +39,7 @@ public class TweetActivity_FortyPer extends AppCompatActivity {
                             .setPositiveButton("close",null)
                             .show();
                 }else if(text.length()>=1&&text.length()<20){
-                    textView.setText(text);
+                    textView.setText(text.substring(0,20));
                     inputEditText.setText("");
                     textView.findViewById(R.id.InputEditText);
                     ScreenChange();
@@ -57,7 +57,7 @@ public class TweetActivity_FortyPer extends AppCompatActivity {
     public void ScreenChange(){
         textView.setText(String.valueOf(points));
         Intent intent = new Intent(getApplicationContext(),MixirActivity_FortyPer.class);
-        intent.putExtra(TWEET_POINT_TWO,points);
+        intent.putExtra(TWEET_POINT,points);
         startActivity(intent);
     }
 }
