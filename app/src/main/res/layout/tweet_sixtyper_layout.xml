@@ -55,4 +55,23 @@
             android:textSize="18dp" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/StrNumView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:textSize="30dp"
+        android:text="合計文字数 ：" />
+
+    <TextView
+        android:id="@+id/StrNumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/StrNumView"
+        android:layout_toRightOf="@id/StrNumView"
+        android:textSize="30dp"
+        android:text="0" />
+
 </RelativeLayout>
