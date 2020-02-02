@@ -20,7 +20,7 @@ public class MixirActivity_SixtyPer extends AppCompatActivity {
         setContentView(R.layout.mixir_sixtyper_layout);
 
         mVideoView = (VideoView)findViewById(R.id.videoView6);
-        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.mixer_sixper));
+        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.sixty_mixer));
 
         //ボタンを押した際にカウントを増やし、一定値以上で切り替える
 
