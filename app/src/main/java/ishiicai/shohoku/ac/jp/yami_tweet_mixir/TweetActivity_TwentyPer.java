@@ -1,18 +1,14 @@
 package ishiicai.shohoku.ac.jp.yami_tweet_mixir;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,7 +54,7 @@ public class TweetActivity_TwentyPer extends AppCompatActivity {
 
                 text = inputeditText.getText().toString();
 
-                points = text.length();
+                points += text.length();
                 saveData(db, points);
                 if(text.length()<1){
                     new AlertDialog.Builder(view.getContext())

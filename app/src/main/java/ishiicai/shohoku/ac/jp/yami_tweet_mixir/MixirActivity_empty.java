@@ -7,12 +7,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.VideoView;
-
-import java.util.concurrent.TransferQueue;
 
 import androidx.appcompat.app.AppCompatActivity;
 
