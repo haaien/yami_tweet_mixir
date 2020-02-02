@@ -19,7 +19,7 @@ public class MixirActivity_TwentyPer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mixir_twentyper_layout);
 
-        mVideoView = (VideoView)findViewById(R.id.videoView6);
+        mVideoView = (VideoView)findViewById(R.id.videoView2);
         mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.mixer_secondper));
 
         //ボタンを押した際にカウントを増やし、一定値以上で切り替える
@@ -29,7 +29,7 @@ public class MixirActivity_TwentyPer extends AppCompatActivity {
                 //カウントを１増やす、その際一定値以上ならば画面を遷移する
                 points++;
 
-                Button button1 = (Button)findViewById(R.id.button6);
+                Button button1 = (Button)findViewById(R.id.button1);
                 button1.setOnClickListener(new View.OnClickListener() {
 
             @Override
