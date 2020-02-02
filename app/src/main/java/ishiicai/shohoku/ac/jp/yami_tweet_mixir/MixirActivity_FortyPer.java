@@ -20,7 +20,7 @@ public class MixirActivity_FortyPer extends AppCompatActivity {
         setContentView(R.layout.mixir_fortyper_layout);
 
         mVideoView = (VideoView)findViewById(R.id.videoView6);
-        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.mixer_fourper));
+        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.fourty_mixer));
 
         //ボタンを押した際にカウントを増やし、一定値以上で切り替える
 

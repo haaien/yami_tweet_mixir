@@ -21,7 +21,7 @@ public class BrokenMixerActivity extends AppCompatActivity {
         setContentView(R.layout.tmp_stab_layout);
 
         mVideoView = (VideoView)findViewById(R.id.videoView6);
-        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.burn_shock));
+        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.broken_mixer));
         //動画の再生開始
         mVideoView.start();
 
