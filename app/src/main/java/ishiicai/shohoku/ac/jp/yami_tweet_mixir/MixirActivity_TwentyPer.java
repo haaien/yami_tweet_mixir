@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MixirActivity_TwentyPer extends AppCompatActivity {
 
     private VideoView mVideoView;
-    public static final String TWEET_POINT = "SendToOtherActivity.DATA";
+    public static final String TWEET_TEXT= "SendToOtherActivity.DATA";
     public int sumTextNum;              //総文字数
     private int textPointSum=0;
     private TestOpenHelper helper;
@@ -27,7 +27,7 @@ public class MixirActivity_TwentyPer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mixir_empty_layout);
         mVideoView = (VideoView)findViewById(R.id.videoView6);
-        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.normal_mixer));
+        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.twenty_mixer));
         strNumText=findViewById(R.id.StrNumText);
         textView=findViewById(R.id.textView);
 
@@ -58,14 +58,14 @@ public class MixirActivity_TwentyPer extends AppCompatActivity {
     }
 
     public void ScreenChange_two(){
-        Intent intent = new Intent(getApplication(), TweetActivity_Empty.class);
-        intent.putExtra(TWEET_POINT, textPointSum);
+        Intent intent = new Intent(getApplication(), TweetActivity_TwentyPer.class);
+        intent.putExtra(TWEET_TEXT, textPointSum);
         startActivity(intent);
     }
 
     public void ScreenChange_for(){
-        Intent intent = new Intent(getApplication(), TweetActivity_TwentyPer.class);
-        intent.putExtra(TWEET_POINT, textPointSum);
+        Intent intent = new Intent(getApplication(), TweetActivity_FortyPer.class);
+        intent.putExtra(TWEET_TEXT, textPointSum);
         startActivity(intent);
     }
 

@@ -40,6 +40,10 @@ public class TweetActivity_Empty extends AppCompatActivity {
         Log.d("Debug","readDataまで動いたよ");
         points=sumTextNum;
 
+        //本番はコメントアウトする部分（現在の文字数）
+        TextView textView_texsum = (TextView)findViewById(R.id.StrNumText);
+        textView_texsum.setText(sumTextNum);
+
         imageButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -63,15 +67,11 @@ public class TweetActivity_Empty extends AppCompatActivity {
                             .setPositiveButton("close",null)
                             .show();
                 }else if(text.length()>=1&&text.length()<20){
-                    textView.setText(text);
                     inputeditText.setText("");
-
                     ScreenChange();
                 }else if(text.length()>=20){
                     text=text.substring(0,19);
-                    textView.setText(text);
                     inputeditText.setText("");
-
                     ScreenChange();
                 }else {
                     Toast.makeText(view.getContext(),"入力してくださあああい！",Toast.LENGTH_SHORT);
