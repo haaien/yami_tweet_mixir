@@ -3,6 +3,7 @@ package ishiicai.shohoku.ac.jp.yami_tweet_mixir;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,8 +27,6 @@ public class MixirActivity_EightyPer extends AppCompatActivity {
     protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mixir_empty_layout);
-        mVideoView = (VideoView)findViewById(R.id.videoView6);
-        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.eighty_mixer));
         strNumText=findViewById(R.id.StrNumText);
         textView=findViewById(R.id.textView);
 
@@ -40,21 +39,28 @@ public class MixirActivity_EightyPer extends AppCompatActivity {
         textPointSum = sumTextNum;
         strNumText.setText(String.valueOf(textPointSum));
 
-        //ボタンを押した際にカウントを増やし、一定値以上で切り替える
+        //取得文字数によって再生する動画を切り替える
+        if (textPointSum >= 100) {
+            mVideoView = (VideoView)findViewById(R.id.videoView2);
+            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.broken_mixer));
+        } else {
+            mVideoView = (VideoView)findViewById(R.id.videoView2);
+            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.eighty_mixer));
+        }
 
         //動画の再生開始
         mVideoView.start();
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent T_EVENT){
-        //一定値以上ならば画面を遷移する
-        if (textPointSum >= 100) {
-            ScreenChange_bro();
-        } else {
-            ScreenChange_eig();
-        }
-        return true;
+        //再生完了リスナーの取得
+        mVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
+            @Override
+            public void onCompletion(MediaPlayer mp){
+                if (textPointSum >= 100) {
+                    ScreenChange_bro();
+                } else {
+                    ScreenChange_eig();
+                }
+            }
+        });
     }
 
     public void ScreenChange_eig(){
