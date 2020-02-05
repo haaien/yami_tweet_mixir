@@ -22,7 +22,7 @@
         android:layout_below="@id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        app:srcCompat="@drawable/sixty_mixer" />
+        app:srcCompat="@drawable/mixer_six" />
 
 
     <LinearLayout
