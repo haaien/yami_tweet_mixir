@@ -22,7 +22,7 @@
         android:layout_height="300dp"
         android:layout_below="@id/textView"
         android:layout_marginTop="10dp"
-        app:srcCompat="@drawable/eighty_mixer" />
+        app:srcCompat="@drawable/mixer_eight" />
 
     <LinearLayout
         android:layout_width="match_parent"
