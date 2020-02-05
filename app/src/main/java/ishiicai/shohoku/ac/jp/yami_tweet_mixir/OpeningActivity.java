@@ -98,8 +98,8 @@ public class OpeningActivity extends AppCompatActivity {
                 intent = new Intent(OpeningActivity.this, TweetActivity_SixtyPer.class);
             }else if(sumTextNum<=100){
                 intent = new Intent(OpeningActivity.this, TweetActivity_EightyPer.class);
-            }else if(100<sumTextNum){
-                intent = new Intent(OpeningActivity.this, BrokenMixerActivity.class);
+            //}else if(100<sumTextNum){
+                //intent = new Intent(OpeningActivity.this, BrokenMixerActivity.class);
             }else{
                 Intent intent = new Intent(OpeningActivity.this, TmpStab.class);
             }
