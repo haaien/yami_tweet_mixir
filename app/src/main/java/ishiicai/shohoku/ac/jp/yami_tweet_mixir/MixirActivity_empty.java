@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,8 +28,6 @@ public class MixirActivity_empty extends AppCompatActivity {
     protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mixir_empty_layout);
-        mVideoView = (VideoView)findViewById(R.id.videoView6);
-        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.twenty_mixer));
         strNumText=findViewById(R.id.StrNumText);
         textView=findViewById(R.id.textView);
 
@@ -41,21 +40,30 @@ public class MixirActivity_empty extends AppCompatActivity {
         textPointSum = sumTextNum;
         strNumText.setText(String.valueOf(textPointSum));
 
-        //ボタンを押した際にカウントを増やし、一定値以上で切り替える
+        //取得文字数によって再生する動画を切り替える
+        if (textPointSum >= 20) {
+            mVideoView = (VideoView)findViewById(R.id.videoView6);
+            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.empty_next));
+        } else {
+            mVideoView = (VideoView)findViewById(R.id.videoView6);
+            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.empty_mixer));
+        }
 
         //動画の再生開始
         mVideoView.start();
-    }
+        //再生完了リスナーの取得
+        mVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
+            @Override
+            public void onCompletion(MediaPlayer mp){
+                if (textPointSum >= 20) {
+                    ScreenChange_two();
+                } else {
+                    ScreenChange_emp();
+                }
+            }
+        });
 
-    @Override
-    public boolean onTouchEvent(MotionEvent T_EVENT){
-        //一定値以上ならば画面を遷移する
-        if (textPointSum >= 20) {
-            ScreenChange_two();
-        } else {
-            ScreenChange_emp();
-        }
-        return true;
+
     }
 
     public void ScreenChange_emp(){
