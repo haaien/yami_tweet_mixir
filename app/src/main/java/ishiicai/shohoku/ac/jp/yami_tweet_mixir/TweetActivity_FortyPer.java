@@ -42,7 +42,7 @@ public class TweetActivity_FortyPer extends AppCompatActivity {
 
         //本番はコメントアウトする部分（現在の文字数）
         TextView textView_texsum = (TextView)findViewById(R.id.StrNumText);
-        textView_texsum.setText(sumTextNum);
+        textView_texsum.setText(String.valueOf(points));
 
         imageButton.setOnClickListener(new View.OnClickListener(){
             @Override
