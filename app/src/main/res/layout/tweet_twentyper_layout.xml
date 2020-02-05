@@ -17,12 +17,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="255dp"
-        android:layout_height="272dp"
+        android:layout_width="600dp"
+        android:layout_height="300dp"
         android:layout_below="@id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        app:srcCompat="@android:drawable/ic_menu_today" />
+        app:srcCompat="@drawable/twenty_mixer" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,11 +36,11 @@
 
         <EditText
             android:id="@+id/InputEditText"
-            android:background="@drawable/wood_texture"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/wood_texture"
             android:ems="15"
             android:hint="ここになにもかも吐き出して\nミキサーで粉々にしてしまいましょう"
             android:textSize="15dp" />
