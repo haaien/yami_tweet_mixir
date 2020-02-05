@@ -19,11 +19,11 @@ public class TweetActivity_Empty extends AppCompatActivity {
     private EditText inputeditText;
     private ImageButton imageButton;
     private TextView textView;
-    private int sumTextNum;              //総文字数
+    private int sumTextNum;              //データベースから引っ張ってきた総文字数
     private TestOpenHelper helper;
     private SQLiteDatabase db;
 
-    public int points;
+    public int points;                  //実際に参照する総文字数
     public static final String TWEET_TEXT="SendToOtherActivity.DATA";
     public String text;
 
@@ -42,7 +42,7 @@ public class TweetActivity_Empty extends AppCompatActivity {
 
         //本番はコメントアウトする部分（現在の文字数）
         TextView textView_texsum = (TextView)findViewById(R.id.StrNumText);
-        textView_texsum.setText(sumTextNum);
+        textView_texsum.setText(String.valueOf(points));
 
         imageButton.setOnClickListener(new View.OnClickListener(){
             @Override
