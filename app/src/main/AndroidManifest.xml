@@ -23,6 +23,11 @@
         <activity android:label="yami_tweet_mixir" android:name=".TweetActivity_EightyPer"/>
         <activity android:label="yami_tweet_mixir" android:name=".BrokenMixerActivity"/>
         <activity android:label="yami_tweet_mixir" android:name=".MixirActivity_empty"/>
+        <activity android:label="yami_tweet_mixir" android:name=".MixirActivity_TwentyPer"/>
+        <activity android:label="yami_tweet_mixir" android:name=".MixirActivity_FortyPer"/>
+        <activity android:label="yami_tweet_mixir" android:name=".MixirActivity_SixtyPer"/>
+        <activity android:label="yami_tweet_mixir" android:name=".MixirActivity_EightyPer"/>
+
     </application>
 
 </manifest>

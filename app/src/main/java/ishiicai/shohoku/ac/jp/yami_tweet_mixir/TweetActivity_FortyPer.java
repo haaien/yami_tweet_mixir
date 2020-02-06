@@ -41,8 +41,10 @@ public class TweetActivity_FortyPer extends AppCompatActivity {
         points=sumTextNum;
 
         //本番はコメントアウトする部分（現在の文字数）
+        /*
         TextView textView_texsum = (TextView)findViewById(R.id.StrNumText);
         textView_texsum.setText(String.valueOf(points));
+         */
 
         imageButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -81,7 +83,7 @@ public class TweetActivity_FortyPer extends AppCompatActivity {
     }
     public void ScreenChange(){
         textView.setText(String.valueOf(points));
-        Intent intent = new Intent(getApplication(), MixirActivity_empty.class);
+        Intent intent = new Intent(getApplication(), MixirActivity_FortyPer.class);
         intent.putExtra(TWEET_TEXT, text);
         startActivity(intent);
     }
