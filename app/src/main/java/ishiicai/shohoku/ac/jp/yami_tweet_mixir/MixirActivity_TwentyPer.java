@@ -26,7 +26,7 @@ public class MixirActivity_TwentyPer extends AppCompatActivity {
 
     protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mixir_empty_layout);
+        setContentView(R.layout.mixir_twentyper_layout);
         strNumText=findViewById(R.id.StrNumText);
         textView=findViewById(R.id.textView);
 

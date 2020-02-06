@@ -81,7 +81,7 @@ public class TweetActivity_TwentyPer extends AppCompatActivity {
     }
     public void ScreenChange(){
         textView.setText(String.valueOf(points));
-        Intent intent = new Intent(getApplication(), MixirActivity_empty.class);
+        Intent intent = new Intent(getApplication(), MixirActivity_TwentyPer.class);
         intent.putExtra(TWEET_TEXT, text);
         startActivity(intent);
     }

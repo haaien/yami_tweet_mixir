@@ -26,7 +26,7 @@ public class MixirActivity_SixtyPer extends AppCompatActivity {
 
     protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mixir_empty_layout);
+        setContentView(R.layout.mixir_sixtyper_layout);
         strNumText=findViewById(R.id.StrNumText);
         textView=findViewById(R.id.textView);
 
@@ -41,10 +41,10 @@ public class MixirActivity_SixtyPer extends AppCompatActivity {
 
         //取得文字数によって再生する動画を切り替える
         if (textPointSum >= 80) {
-            mVideoView = (VideoView)findViewById(R.id.videoView2);
+            mVideoView = (VideoView)findViewById(R.id.videoView4);
             mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.sixty_next));
         } else {
-            mVideoView = (VideoView)findViewById(R.id.videoView2);
+            mVideoView = (VideoView)findViewById(R.id.videoView4);
             mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.sixty_mixer));
         }
 

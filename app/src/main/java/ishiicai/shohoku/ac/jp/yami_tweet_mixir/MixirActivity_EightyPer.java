@@ -26,7 +26,7 @@ public class MixirActivity_EightyPer extends AppCompatActivity {
 
     protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mixir_empty_layout);
+        setContentView(R.layout.mixir_eightyper_layout);
         strNumText=findViewById(R.id.StrNumText);
         textView=findViewById(R.id.textView);
 
@@ -41,10 +41,10 @@ public class MixirActivity_EightyPer extends AppCompatActivity {
 
         //取得文字数によって再生する動画を切り替える
         if (textPointSum >= 100) {
-            mVideoView = (VideoView)findViewById(R.id.videoView2);
+            mVideoView = (VideoView)findViewById(R.id.videoView5);
             mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.broken_mixer));
         } else {
-            mVideoView = (VideoView)findViewById(R.id.videoView2);
+            mVideoView = (VideoView)findViewById(R.id.videoView5);
             mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.eighty_mixer));
         }
 
