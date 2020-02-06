@@ -5,13 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/Title_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="40dp"
-        android:text="病みツイミキサー" />
+    <VideoView
+        android:id="@+id/open"
+        android:layout_width="1080dp"
+        android:layout_height="1920dp"
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:id="@+id/StrNumView"
