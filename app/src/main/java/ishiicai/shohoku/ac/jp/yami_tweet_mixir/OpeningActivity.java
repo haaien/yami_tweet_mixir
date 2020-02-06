@@ -4,12 +4,15 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +22,7 @@ public class OpeningActivity extends AppCompatActivity {
     private SQLiteDatabase db;
     public int sumTextNum;          //総文字数
     public Intent intent;
+    private VideoView mVideoView;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +85,24 @@ public class OpeningActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        mVideoView = (VideoView)findViewById(R.id.open);
+        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.open));
+        //動画の再生開始
+        mVideoView.start();
+        // 動画再生完了通知のリスナー設定
+        mVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                // 先頭に戻す
+                mVideoView.seekTo(0);
+                // 再生開始
+                mVideoView.start();
+            }
+
+        });
+
 
     }
 
