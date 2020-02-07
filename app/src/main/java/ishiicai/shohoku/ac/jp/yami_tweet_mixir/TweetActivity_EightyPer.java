@@ -31,7 +31,7 @@ public class TweetActivity_EightyPer extends AppCompatActivity {
 
     public int points;
     public static final String TWEET_TEXT="SendToOtherActivity.DATA";
-    public String text;
+    public String text,cutText;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,7 +76,7 @@ public class TweetActivity_EightyPer extends AppCompatActivity {
                     inputeditText.setText("");
                     ScreenChange();
                 }else if(text.length()>=20){
-                    text=text.substring(0,19);
+                    cutText=text.substring(0,10);
                     inputeditText.setText("");
                     ScreenChange();
                 }else {
@@ -86,28 +86,11 @@ public class TweetActivity_EightyPer extends AppCompatActivity {
         });
     }
     public void ScreenChange(){
-        textView.setText(String.valueOf(points));
+        //textView.setText(String.valueOf(points));
         Intent intent = new Intent(getApplication(), MixirActivity_EightyPer.class);
-        intent.putExtra(TWEET_TEXT, text);
+        intent.putExtra(TWEET_TEXT, cutText);
         startActivity(intent);  //何故かなくなっていたからこの行を追加 2/7石井
     }
-
-    public void StartAnimation(){
-        translateAnimation = new TranslateAnimation(
-                Animation.ABSOLUTE,0.0f,
-                Animation.ABSOLUTE,0.0f,
-                Animation.ABSOLUTE,0.0f,
-                Animation.ABSOLUTE,1200.0f
-        );
-        translateAnimation.setDuration(2000);
-
-        translateAnimation.setRepeatCount(0);
-
-        translateAnimation.setFillAfter(true);
-
-        textView.startAnimation(translateAnimation);
-    }
-
 
     /**
      * 総文字数をDBに保存する（関数を呼び出すための）関数
