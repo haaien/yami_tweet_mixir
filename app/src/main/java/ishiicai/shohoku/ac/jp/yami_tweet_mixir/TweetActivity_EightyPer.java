@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -15,6 +17,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
+
 public class TweetActivity_EightyPer extends AppCompatActivity {
     private EditText inputeditText;
     private ImageButton imageButton;
@@ -22,6 +27,7 @@ public class TweetActivity_EightyPer extends AppCompatActivity {
     private int sumTextNum;              //総文字数
     private TestOpenHelper helper;
     private SQLiteDatabase db;
+    private TranslateAnimation translateAnimation;
 
     public int points;
     public static final String TWEET_TEXT="SendToOtherActivity.DATA";
@@ -83,8 +89,25 @@ public class TweetActivity_EightyPer extends AppCompatActivity {
         textView.setText(String.valueOf(points));
         Intent intent = new Intent(getApplication(), MixirActivity_EightyPer.class);
         intent.putExtra(TWEET_TEXT, text);
-        startActivity(intent);
+        startActivity(intent);  //何故かなくなっていたからこの行を追加 2/7石井
     }
+
+    public void StartAnimation(){
+        translateAnimation = new TranslateAnimation(
+                Animation.ABSOLUTE,0.0f,
+                Animation.ABSOLUTE,0.0f,
+                Animation.ABSOLUTE,0.0f,
+                Animation.ABSOLUTE,1200.0f
+        );
+        translateAnimation.setDuration(2000);
+
+        translateAnimation.setRepeatCount(0);
+
+        translateAnimation.setFillAfter(true);
+
+        textView.startAnimation(translateAnimation);
+    }
+
 
     /**
      * 総文字数をDBに保存する（関数を呼び出すための）関数
