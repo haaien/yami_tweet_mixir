@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.TextView;
 import android.widget.VideoView;
+import android.view.animation.TranslateAnimation;
+import android.view.animation.Animation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +26,7 @@ public class MixirActivity_empty extends AppCompatActivity {
     private SQLiteDatabase db;
     private TextView strNumText;
     private TextView textView;
+    private TranslateAnimation translateAnimation;  //viewのアニメーション
 
     protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +51,8 @@ public class MixirActivity_empty extends AppCompatActivity {
             mVideoView = (VideoView)findViewById(R.id.videoView6);
             mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.empty_mixer));
         }
-
+        //文字の移動開始
+        StartAnimation();
         //動画の再生開始
         mVideoView.start();
         //再生完了リスナーの取得
@@ -66,9 +70,25 @@ public class MixirActivity_empty extends AppCompatActivity {
 
     }
 
+    public void StartAnimation(){
+        translateAnimation = new TranslateAnimation(
+                Animation.ABSOLUTE,0.0f,
+                Animation.ABSOLUTE,0.0f,
+                Animation.ABSOLUTE,0.0f,
+                Animation.ABSOLUTE,110.0f
+        );
+        //秒数、ミリ秒
+        translateAnimation.setDuration(3000);
+        //繰り返す回数
+        translateAnimation.setRepeatCount(0);
+        //やれ
+        translateAnimation.setFillAfter(true);
+        textView.startAnimation(translateAnimation);
+    }
+
     public void ScreenChange_emp(){
         Intent intent = new Intent(getApplication(), TweetActivity_Empty.class);
-        intent.putExtra(TWEET_TEXT, textPointSum);
+        intent.putExtra(TWEET_TEXT, textPointSum);    //もしエラーが吐かれたらここが原因の可能性あり　dtextPointSum
         startActivity(intent);
     }
 

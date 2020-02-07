@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 public class TweetActivity_Empty extends AppCompatActivity {
     private EditText inputeditText;
     private ImageButton imageButton;
@@ -78,6 +79,7 @@ public class TweetActivity_Empty extends AppCompatActivity {
                 }
             }
         });
+
     }
     public void ScreenChange(){
         textView.setText(String.valueOf(points));
@@ -85,6 +87,8 @@ public class TweetActivity_Empty extends AppCompatActivity {
         intent.putExtra(TWEET_TEXT, text);
         startActivity(intent);
     }
+
+
 
     /**
      * 総文字数をDBに保存する（関数を呼び出すための）関数

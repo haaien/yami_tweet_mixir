@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.TextView;
 import android.widget.VideoView;
+import android.view.animation.TranslateAnimation;
+import android.view.animation.Animation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,6 +25,7 @@ public class MixirActivity_SixtyPer extends AppCompatActivity {
     private SQLiteDatabase db;
     private TextView strNumText;
     private TextView textView;
+    private TranslateAnimation translateAnimation;  //viewのアニメーション
 
     protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +51,9 @@ public class MixirActivity_SixtyPer extends AppCompatActivity {
             mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.sixty_mixer));
         }
 
+        //textviewの移動開始
+        StartAnimation();
+
         //動画の再生開始
         mVideoView.start();
         //再生完了リスナーの取得
@@ -62,6 +68,23 @@ public class MixirActivity_SixtyPer extends AppCompatActivity {
             }
         });
     }
+
+    public void StartAnimation(){
+        translateAnimation = new TranslateAnimation(
+                Animation.ABSOLUTE,0.0f,
+                Animation.ABSOLUTE,0.0f,
+                Animation.ABSOLUTE,0.0f,
+                Animation.ABSOLUTE,110.0f
+        );
+        translateAnimation.setDuration(3000);
+
+        translateAnimation.setRepeatCount(0);
+
+        translateAnimation.setFillAfter(true);
+
+        textView.startAnimation(translateAnimation);
+    }
+
 
     public void ScreenChange_six(){
         Intent intent = new Intent(getApplication(), TweetActivity_SixtyPer.class);
