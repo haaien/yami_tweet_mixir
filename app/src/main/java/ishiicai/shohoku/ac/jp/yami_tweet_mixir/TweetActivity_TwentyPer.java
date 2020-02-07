@@ -67,10 +67,11 @@ public class TweetActivity_TwentyPer extends AppCompatActivity {
                             .setPositiveButton("close",null)
                             .show();
                 }else if(text.length()>=1&&text.length()<20){
+                    cutText=text;
                     inputeditText.setText("");
                     ScreenChange();
                 }else if(text.length()>=20){
-                    text=text.substring(0,10);
+                    cutText=text.substring(0,10);
                     inputeditText.setText("");
                     ScreenChange();
                 }else {

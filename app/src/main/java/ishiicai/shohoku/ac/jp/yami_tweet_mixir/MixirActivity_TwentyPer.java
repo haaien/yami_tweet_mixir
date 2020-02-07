@@ -73,7 +73,7 @@ public class MixirActivity_TwentyPer extends AppCompatActivity {
                 Animation.ABSOLUTE,0.0f,
                 Animation.ABSOLUTE,0.0f,
                 Animation.ABSOLUTE,0.0f,
-                Animation.ABSOLUTE,110.0f
+                Animation.ABSOLUTE,380.0f
         );
         translateAnimation.setDuration(3000);
 
