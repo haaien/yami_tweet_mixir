@@ -45,10 +45,10 @@ public class MixirActivity_TwentyPer extends AppCompatActivity {
         //取得文字数によって再生する動画を切り替える
         if (textPointSum >= 40) {
             mVideoView = (VideoView)findViewById(R.id.videoView2);
-            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.twenty_next));
+            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.twenty_next_up));
         } else {
             mVideoView = (VideoView)findViewById(R.id.videoView2);
-            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.twenty_mixer));
+            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.twenty_mixer_up));
         }
         //textviewの移動開始
         StartAnimation();

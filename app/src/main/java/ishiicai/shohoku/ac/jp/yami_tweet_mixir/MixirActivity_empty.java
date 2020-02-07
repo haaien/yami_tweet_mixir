@@ -46,10 +46,10 @@ public class MixirActivity_empty extends AppCompatActivity {
         //取得文字数によって再生する動画を切り替える
         if (textPointSum >= 20) {
             mVideoView = (VideoView)findViewById(R.id.videoView6);
-            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.empty_next));
+            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.empty_next_up));
         } else {
             mVideoView = (VideoView)findViewById(R.id.videoView6);
-            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.empty_mixer));
+            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.empty_mixer_up));
         }
         //文字の移動開始
         StartAnimation();
@@ -75,7 +75,7 @@ public class MixirActivity_empty extends AppCompatActivity {
                 Animation.ABSOLUTE,0.0f,
                 Animation.ABSOLUTE,0.0f,
                 Animation.ABSOLUTE,0.0f,
-                Animation.ABSOLUTE,110.0f
+                Animation.ABSOLUTE,380.0f
         );
         //秒数、ミリ秒
         translateAnimation.setDuration(3000);

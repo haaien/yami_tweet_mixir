@@ -26,7 +26,7 @@ public class TweetActivity_Empty extends AppCompatActivity {
 
     public int points;                  //実際に参照する総文字数
     public static final String TWEET_TEXT="SendToOtherActivity.DATA";
-    public String text;
+    public String text, cutText;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,11 +67,11 @@ public class TweetActivity_Empty extends AppCompatActivity {
                             .setMessage("入力したい文字がない？！アプリを消せ！！")
                             .setPositiveButton("close",null)
                             .show();
-                }else if(text.length()>=1&&text.length()<20){
+                }else if(text.length()>=1&&text.length()<10){
                     inputeditText.setText("");
                     ScreenChange();
-                }else if(text.length()>=20){
-                    text=text.substring(0,19);
+                }else if(text.length()>=10){
+                    cutText=text.substring(0,10);
                     inputeditText.setText("");
                     ScreenChange();
                 }else {
@@ -82,9 +82,9 @@ public class TweetActivity_Empty extends AppCompatActivity {
 
     }
     public void ScreenChange(){
-        textView.setText(String.valueOf(points));
+        //textView.setText(String.valueOf(points));
         Intent intent = new Intent(getApplication(), MixirActivity_empty.class);
-        intent.putExtra(TWEET_TEXT, text);
+        intent.putExtra(TWEET_TEXT, cutText);
         startActivity(intent);
     }
 

@@ -49,10 +49,10 @@ public class MixirActivity_EightyPer extends AppCompatActivity {
         //取得文字数によって再生する動画を切り替える
         if (textPointSum >= 100) {
             mVideoView = (VideoView)findViewById(R.id.videoView5);
-            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.broken_mixer));
+            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.broken_mixer_up));
         } else {
             mVideoView = (VideoView)findViewById(R.id.videoView5);
-            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.eighty_mixer));
+            mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.eighty_mixer_up));
         }
 
         //textviewの移動開始

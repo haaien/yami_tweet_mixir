@@ -102,8 +102,31 @@ public class OpeningActivity extends AppCompatActivity {
             }
 
         });
+    }
 
+        @Override
+        protected void onStart(){
+        super.onStart();
+        final TextView textView1 = (TextView)findViewById(R.id.StrNumText);
+        readData();
+        Log.d("Debug","readDataまで動いたよ");
+        textView1.setText(String.valueOf(sumTextNum));
 
+        mVideoView = (VideoView)findViewById(R.id.open);
+        mVideoView.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" +R.raw.open));
+        //動画の再生開始
+        mVideoView.start();
+        // 動画再生完了通知のリスナー設定
+        mVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                // 先頭に戻す
+                mVideoView.seekTo(0);
+                // 再生開始
+                mVideoView.start();
+            }
+        });
     }
 
     //画面を押し(離し)たときにミキサー画面へ遷移する

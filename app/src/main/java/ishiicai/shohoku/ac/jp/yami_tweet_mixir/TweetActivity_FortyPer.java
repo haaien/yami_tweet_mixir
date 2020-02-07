@@ -25,7 +25,7 @@ public class TweetActivity_FortyPer extends AppCompatActivity {
 
     public int points;
     public static final String TWEET_TEXT="SendToOtherActivity.DATA";
-    public String text;
+    public String text, cutText;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +72,7 @@ public class TweetActivity_FortyPer extends AppCompatActivity {
                     inputeditText.setText("");
                     ScreenChange();
                 }else if(text.length()>=20){
-                    text=text.substring(0,19);
+                    cutText=text.substring(0,10);
                     inputeditText.setText("");
                     ScreenChange();
                 }else {
@@ -82,9 +82,9 @@ public class TweetActivity_FortyPer extends AppCompatActivity {
         });
     }
     public void ScreenChange(){
-        textView.setText(String.valueOf(points));
+        //textView.setText(String.valueOf(points));
         Intent intent = new Intent(getApplication(), MixirActivity_FortyPer.class);
-        intent.putExtra(TWEET_TEXT, text);
+        intent.putExtra(TWEET_TEXT, cutText);
         startActivity(intent);
     }
 
