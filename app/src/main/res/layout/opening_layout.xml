@@ -15,11 +15,12 @@
         android:id="@+id/StrNumView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="200dp"
+        android:text="合計文字数 ："
         android:textSize="30dp"
-        android:text="合計文字数 ：" />
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/StrNumText"
@@ -27,8 +28,9 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/StrNumView"
         android:layout_toRightOf="@id/StrNumView"
+        android:text="0"
         android:textSize="30dp"
-        android:text="0" />
+        android:visibility="invisible" />
 
 
     <Button
