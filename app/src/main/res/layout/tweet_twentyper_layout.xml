@@ -21,7 +21,7 @@
         android:layout_height="300dp"
         android:layout_below="@id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         app:srcCompat="@drawable/m_twenty_up" />
 
 
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
 
         android:orientation="horizontal">
 
@@ -43,7 +43,8 @@
             android:background="@drawable/wood_texture"
             android:ems="15"
             android:hint="ここになにもかも吐き出して\nミキサーで粉々にしてしまいましょう"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:textColor="#000000"/>
 
         <ImageButton
             android:id="@+id/MixedButton"

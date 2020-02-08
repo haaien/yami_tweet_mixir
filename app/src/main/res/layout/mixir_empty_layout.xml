@@ -7,12 +7,14 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="170dp"
         android:layout_centerHorizontal="true"
-        android:textSize="40dp"
-        android:text="Void" />
+        android:textSize="20dp"
+        android:text="Void"
+        android:background="@drawable/wood_texture"
+        android:textColor="#000000"/>
 
     <VideoView
         android:id="@+id/videoView6"
@@ -28,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/videoView6"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <EditText
@@ -39,8 +41,9 @@
             android:layout_weight="1"
             android:layout_marginLeft="10dp"
             android:ems="15"
-            android:hint="ここになにもかも吐き出して\nミキサーで粉々にしてしまいましょう"
-            android:textSize="15dp" />
+            android:text="細断中"
+            android:textSize="15dp"
+            android:textColor="#000000"/>
 
         <ImageButton
             android:id="@+id/MixedButton"

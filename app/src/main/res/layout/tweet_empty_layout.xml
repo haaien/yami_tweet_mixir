@@ -13,7 +13,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="120dp"
         android:enabled="false"
-        android:textSize="40dp" />
+        android:textSize="40dp"
+        />
 
     <ImageView
         android:id="@+id/imageView"
@@ -21,7 +22,7 @@
         android:layout_height="300dp"
         android:layout_below="@id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         app:srcCompat="@drawable/m_empty_up" />
 
     <LinearLayout
@@ -29,19 +30,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
 
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/InputEditText"
-            android:background="@drawable/wood_texture"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/wood_texture"
             android:ems="15"
+            android:fontFamily="ass"
             android:hint="ここになにもかも吐き出して\nミキサーで粉々にしてしまいましょう"
+            android:textColor="#000000"
             android:textSize="15dp" />
 
         <ImageButton

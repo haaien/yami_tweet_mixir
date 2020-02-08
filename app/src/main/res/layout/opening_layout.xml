@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:text="0" />
+        android:text="空" />
 
     <Button
         android:id="@+id/button2"
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@id/button"
-        android:text="2" />
+        android:text="2割" />
 
     <Button
         android:id="@+id/button3"
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@id/button2"
-        android:text="4" />
+        android:text="4割" />
 
     <Button
         android:id="@+id/button4"
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@id/button3"
-        android:text="6" />
+        android:text="6割" />
 
     <Button
         android:id="@+id/button5"
@@ -69,6 +69,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@id/button4"
-        android:text="8" />
+        android:text="8割" />
 
 </RelativeLayout>

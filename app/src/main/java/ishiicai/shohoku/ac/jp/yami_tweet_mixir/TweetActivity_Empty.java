@@ -68,6 +68,7 @@ public class TweetActivity_Empty extends AppCompatActivity {
                             .setPositiveButton("close",null)
                             .show();
                 }else if(text.length()>=1&&text.length()<10){
+                    cutText=text;
                     inputeditText.setText("");
                     ScreenChange();
                 }else if(text.length()>=10){

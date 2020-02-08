@@ -67,6 +67,7 @@ public class TweetActivity_SixtyPer extends AppCompatActivity {
                             .setPositiveButton("close",null)
                             .show();
                 }else if(text.length()>=1&&text.length()<20){
+                    cutText=text;
                     inputeditText.setText("");
                     ScreenChange();
                 }else if(text.length()>=20){
